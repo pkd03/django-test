@@ -20,7 +20,7 @@ git clone https://github.com/pkd03/django-test
 
 cd crm
 
-3. Create a virtual environment and install dependencies:
+2. Create a virtual environment and install dependencies:
    
 python -m venv venv
 
@@ -28,17 +28,17 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
 
-5. Create a `.env` file in the project root and add your environment variables.
+3.Create a `.env` file in the project root and add your environment variables.
 
-6. Apply migrations:
+4. Apply migrations:
    
 python manage.py migrate
 
-8. Create a superuser:
+5. Create a superuser:
    
 python manage.py createsuperuser
 
-10. Run the development server:
+6. Run the development server:
     
 python manage.py runserver
 
