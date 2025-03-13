@@ -1,0 +1,29 @@
+<!-- templates/admin/dashboard.html -->
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h1>Dashboard</h1>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1; min-width: 200px; padding: 20px; background-color: #f5f5f5; border-radius: 5px;">
+            <h2>Khách hàng</h2>
+            <p>Tổng số: {{ customers_count }}</p>
+            <p>Khách hàng mới (30 ngày): {{ new_customers }}</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 200px; padding: 20px; background-color: #f5f5f5; border-radius: 5px;">
+            <h2>Sản phẩm</h2>
+            <p>Tổng số: {{ products_count }}</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 200px; padding: 20px; background-color: #f5f5f5; border-radius: 5px;">
+            <h2>Công việc</h2>
+            <p>Chưa bắt đầu: {{ tasks_by_status.TODO|default:0 }}</p>
+            <p>Đang thực hiện: {{ tasks_by_status.IN_PROGRESS|default:0 }}</p>
+            <p>Đang kiểm tra: {{ tasks_by_status.REVIEW|default:0 }}</p>
+            <p>Hoàn thành: {{ tasks_by_status.DONE|default:0 }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

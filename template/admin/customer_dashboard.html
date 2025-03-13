@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h1>Thống kê khách hàng</h1>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1; min-width: 200px; padding: 20px; background-color: #f5f5f5; border-radius: 5px;">
+            <h2>Tổng số khách hàng</h2>
+            <p style="font-size: 24px; font-weight: bold;">{{ stats.total }}</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 200px; padding: 20px; background-color: #f5f5f5; border-radius: 5px;">
+            <h2>Khách hàng mới (30 ngày)</h2>
+            <p style="font-size: 24px; font-weight: bold;">{{ stats.new_30_days }}</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 200px; padding: 20px; background-color: #f5f5f5; border-radius: 5px;">
+            <h2>Khách hàng mới (90 ngày)</h2>
+            <p style="font-size: 24px; font-weight: bold;">{{ stats.new_90_days }}</p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <a href="{% url 'admin:customers_customer_changelist' %}" class="button">Quay lại danh sách khách hàng</a>
+    </div>
+</div>
+{% endblock %}
